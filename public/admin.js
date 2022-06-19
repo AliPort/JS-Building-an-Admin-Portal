@@ -1,8 +1,6 @@
-const { text } = require("body-parser");
-
 async function admin(){
-    const bookListResponse = await fetch('http://localhost.3001/ListBooks');
-    const bookList = await booksListResponse.json();
+    const bookListResponse = await fetch('http://localhost:3001/ListBooks');
+    const bookList = await bookListResponse.json();
 
 
 
@@ -28,20 +26,21 @@ async function admin(){
                'Content-type': 'application/json'
             },
             body: JSON.stringify({
-                Id: book.id,
+                id: book.id,
                 quantity: textInput.value,
             })
         
         });
 
     
-        li.append(button);
-
-        ul.append(li);
+        
     });
 })
+    li.append(button);
+
+    ul.append(li);
     const root = documentQuerySelector('#root');
-    root.apend(ul);
+    root.append(ul);
 }
-main()
+admin()
 // Your Code Here
