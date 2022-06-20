@@ -8,7 +8,7 @@ async function admin(){
 
 
     bookList.forEach(book => {
-        const li =document.createElement('li')
+        const li = document.createElement('li')
         li.textContent = book.title;
 
         const textInput = document.createElement('input');
@@ -35,12 +35,13 @@ async function admin(){
     
         
     });
-})
     li.append(button);
 
-    ul.append(li);
-    const root = documentQuerySelector('#root');
-    root.append(ul);
+    ul.append(li)
+})
+    
+    const root = document.querySelector('#root')
+    root.append(ul)
 }
 admin()
 // Your Code Here
